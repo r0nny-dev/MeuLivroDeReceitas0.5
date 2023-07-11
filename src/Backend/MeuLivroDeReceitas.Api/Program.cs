@@ -1,4 +1,5 @@
 using MeuLivroDeReceitas.Infrastructure.Migrations;
+using MeuLivroDeReceitas.Domain.Extension;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +31,8 @@ app.Run();
 
 void AtualizarBaseDeDados()
 {
-    var nomeDatabase = builder.Configuration.GetConnectionString("NomeDatabase");
-    var connectionString = builder.Configuration.GetConnectionString("Conexao");
+    var nomeDatabase = builder.Configuration.GetNomeDatabase();
+    var connectionString = builder.Configuration.GetConexaoDatabase();
+
     Database.CriarDatabase(connectionString, nomeDatabase);
 }
