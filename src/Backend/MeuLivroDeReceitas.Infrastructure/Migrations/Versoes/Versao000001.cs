@@ -1,7 +1,8 @@
 using FluentMigrator;
 
-namespace MeuLivroDeReceitas.Infrastructure.Versoes;
+namespace MeuLivroDeReceitas.Infrastructure.Migrations.Versoes;
 
+[Migration((long)NumeroVersoes.CriarTabelaUsuario, "Cria tabela usuario")]
 public class Versao000001 : Migration
 {
     public override void Down()
@@ -11,11 +12,9 @@ public class Versao000001 : Migration
 
     public override void Up()
     {
-        var tabela = Create.Table("Usuario");
+        var tabela = VersaoBase.InserirColunasPadrao(Create.Table("Usuario"));
 
         tabela
-            .WithColumn("id").AsInt64().PrimaryKey().Identity()
-            .WithColumn("DataCriacao").AsDateTime().NotNullable()
             .WithColumn("Nome").AsString(100).NotNullable()
             .WithColumn("Email").AsString().NotNullable()
             .WithColumn("Senha").AsString(2000).NotNullable()
