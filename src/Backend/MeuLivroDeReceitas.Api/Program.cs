@@ -38,4 +38,6 @@ void AtualizarBaseDeDados()
     var connectionString = builder.Configuration.GetConexaoDatabase();
 
     Database.CriarDatabase(connectionString, nomeDatabase);
+
+    app.MigrateBancoDeDados();
 }
