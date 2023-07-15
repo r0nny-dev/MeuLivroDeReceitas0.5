@@ -23,6 +23,6 @@ public static class RepositorioExtension
         var nomeDatabase = configurationManager.GetNomeDatabase();
         var conexao = configurationManager.GetConexaoDatabase();
 
-        return $"{conexao}Database={nomeDatabase}";
+        return $"{conexao}Database={nomeDatabase};";
     }
 }
