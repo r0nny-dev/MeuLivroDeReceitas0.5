@@ -5,7 +5,6 @@ namespace MeuLivroDeReceitas.Infrastructure.Migrations;
 
 public static class Database
 {
-
     public static void CriarDatabase(string connectionString, string nomeDatabase)
     {
         using var conn = new NpgsqlConnection(connectionString);
