@@ -1,5 +1,5 @@
-using MeuLivroDeReceitas.Infrastructure.Migrations;
 using MeuLivroDeReceitas.Domain.Extension;
+using MeuLivroDeReceitas.Infrastructure.Migrations;
 using MeuLivroDeReceitas.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,9 +35,9 @@ app.Run();
 void AtualizarBaseDeDados()
 {
     var nomeDatabase = builder.Configuration.GetNomeDatabase();
-    var connectionString = builder.Configuration.GetConexaoDatabase();
+    var conexao = builder.Configuration.GetConexao();
 
-    Database.CriarDatabase(connectionString, nomeDatabase);
+    Database.CriarDatabase(conexao, nomeDatabase);
 
     app.MigrateBancoDeDados();
 }

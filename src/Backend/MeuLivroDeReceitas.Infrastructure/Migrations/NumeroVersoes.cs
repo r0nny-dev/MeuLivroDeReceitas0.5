@@ -1,6 +1,6 @@
-namespace MeuLivroDeReceitas.Infrastructure.Migrations;
+﻿namespace MeuLivroDeReceitas.Infrastructure.Migrations;
 
 public enum NumeroVersoes
 {
-    CriarTabelaUsuario = 1
+    CriarTabelaUsuario = 1  
 }

@@ -1,8 +1,7 @@
-using FluentMigrator;
+﻿using FluentMigrator;
 
 namespace MeuLivroDeReceitas.Infrastructure.Migrations.Versoes;
-
-[Migration((long)NumeroVersoes.CriarTabelaUsuario, "Cria tabela usuario")]
+[Migration((long)NumeroVersoes.CriarTabelaUsuario, "Criar tabela usuario")]
 public class Versao000001 : Migration
 {
     public override void Down()
